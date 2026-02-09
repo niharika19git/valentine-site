@@ -1,0 +1,183 @@
+<html>
+
+<head>
+
+<style>
+
+body
+{
+    background-color: lightpink;
+    font-family: Arial;
+    text-align: center;
+}
+
+/* Scene */
+.scene
+{
+    width: 500px;
+    height: 300px;
+    margin: 80px auto;
+    perspective: 2000px;
+}
+
+/* Card container */
+.card
+{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+/* Inside pages */
+.inside
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+
+    border-radius: 15px;
+    overflow: hidden;
+
+    z-index: 1;
+}
+
+/* Inside left page */
+.inside-left
+{
+    width: 50%;
+    background: white;
+}
+
+/* Inside right page */
+.inside-right
+{
+    width: 50%;
+    background: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    padding-left: 60px;
+    padding-right: 30px;
+
+    text-align: left;
+}
+
+/* Front left cover */
+.cover-left
+{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    left: 0;
+    top: 0;
+
+    background: red;
+
+    border-radius: 15px 0 0 15px;
+
+    z-index: 3;
+}
+
+/* Front right cover (the opening part) */
+.cover-right
+{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    right: 0;
+    top: 0;
+
+    background: red;
+
+    border-radius: 0 15px 15px 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 50px;
+    color: white;
+
+    cursor: pointer;
+
+    transform-origin: left;
+    transition: transform 1s;
+
+    z-index: 4;
+}
+
+/* crease line */
+.cover-left::after
+{
+    content: "";
+    position: absolute;
+    right: 0;
+    width: 3px;
+    height: 100%;
+    background: rgba(0,0,0,0.3);
+}
+
+/* Opening animation */
+.card.open .cover-right
+{
+    transform: rotateY(-180deg);
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>❤️</h1>
+
+<div class="scene">
+
+<div class="card" id="card">
+
+<div class="inside">
+
+<div class="inside-left"></div>
+
+<div class="inside-right">
+<div style="max-width:220px;">
+Happy Valentine's Day my bubu boy ❤️<br><br>
+You're the cutest bubu boy in the entire bubu world ❤️
+</div>
+</div>
+
+</div>
+
+<div class="cover-left"></div>
+
+<div class="cover-right" onclick="openCard()">
+❤️
+</div>
+
+</div>
+
+</div>
+
+<br><br>
+
+<a href="/gallery">
+<button style="font-size:20px; padding:10px 20px;">
+Next →
+</button>
+</a>
+
+<script>
+
+function openCard()
+{
+    document.getElementById("card").classList.add("open");
+}
+
+</script>
+
+</body>
+
+</html>

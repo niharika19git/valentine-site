@@ -1,0 +1,100 @@
+<html>
+
+<head>
+
+<style>
+
+body
+{
+    background-color: lightpink;
+    font-family: Arial;
+    text-align: center;
+    cursor: pointer;
+}
+
+/* Heart */
+.heart
+{
+    font-size: 80px;
+    margin-top: 40px;
+}
+
+/* Text styling */
+.message
+{
+    font-size: 28px;
+    margin-top: 40px;
+    display: none;
+}
+
+.big
+{
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.small
+{
+    font-size: 22px;
+}
+
+.hint
+{
+    position: fixed;
+    bottom: 20px;
+    width: 100%;
+    font-size: 16px;
+    opacity: 0.6;
+}
+
+</style>
+
+</head>
+
+<body onclick="showNext()">
+
+<div class="heart">❤️</div>
+
+<div id="text1" class="message">
+Thank you for being in my life.
+</div>
+
+<div id="text2" class="message">
+You are the best thing that happened to me.
+</div>
+
+<div id="text3" class="message">
+I wish I could say this to you in person, but...
+</div>
+
+<div id="text4" class="message big">
+I love you.
+</div>
+
+<div id="text5" class="message small">
+Forever and always.
+</div>
+
+<div class="hint">
+(click anywhere)
+</div>
+
+<script>
+
+let current = 0;
+
+function showNext()
+{
+    current++;
+
+    if(current <= 5)
+    {
+        document.getElementById("text" + current).style.display = "block";
+    }
+}
+
+</script>
+
+</body>
+
+</html>
